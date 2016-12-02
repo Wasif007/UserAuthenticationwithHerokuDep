@@ -5,6 +5,8 @@ var id=1;
 var users=[];
 var body_parser=require('body-parser');
 var _=require('underscore');
+var db=require('./db.js');
+
 var bcrypt=require('bcrypt');
 
 //about route
@@ -52,7 +54,9 @@ res.send(values);
 });
 });
 
-
+db.sequelize.sync({force:true}).then(function()
+{
 app.listen(PORT,function(){
 	console.log("Listening on port"+PORT);
+});
 });
