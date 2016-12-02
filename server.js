@@ -6,8 +6,9 @@ var users=[];
 var body_parser=require('body-parser');
 var _=require('underscore');
 var db=require('./db.js');
-
 var bcrypt=require('bcrypt');
+
+app.use(body_parser.json());
 
 //about route
 app.get("/about",function(req,res){
