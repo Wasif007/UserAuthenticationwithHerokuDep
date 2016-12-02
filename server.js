@@ -45,6 +45,14 @@ var body=_.pick(req.body,'email','password');
 	})
 });
 
+//Get all users
+app.get("/users/all",function(req,res){
+db.user.all().then(function(values){
+res.send(values);
+});
+});
+
+
 app.listen(PORT,function(){
 	console.log("Listening on port"+PORT);
 });
