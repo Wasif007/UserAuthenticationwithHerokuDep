@@ -4,7 +4,6 @@ var PORT=process.env.PORT || 3000;
 var id=1;
 var users=[];
 var body_parser=require('body-parser');
-var db=require('./db.js');
 var _=require('underscore');
 var bcrypt=require('bcrypt');
 
